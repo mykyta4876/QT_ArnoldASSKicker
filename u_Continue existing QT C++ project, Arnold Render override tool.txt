@@ -1,0 +1,79 @@
+[Description]
+We have an existing QT project for an Arnold Renderer override application. The developer we were using has availablity issues due to full time work, and we would like to continue his amazing start to the project.
+
+It's fully functional with Arnold Renderer kick overrides. But that only covers features up through Arnold 5. We have Arnold 6 and 7 render options that also need to be included in the programming and UI of our program.
+
+Bonus, we do want to release this program as a Windows (and maybe Mac?) installable program package, EXE (dmg?). We currently use the users MAC address to lock the license to their PC. And hopefully there's a way to do that in a cleaner method (currently doing a compile per MAC address so that each application build is unique to each customer).
+
+=====================================
+[Proposal]
+Hey there! I'd love to help continue development on your Arnold override application. From what you've described, it sounds like you've got a solid foundation with Arnold 5 features, and you're looking to expand into Arnold 6 & 7 territory. That's definitely something I can help with!
+First off, regarding the licensing system - I totally get why you're using MAC addresses, but you're right that compiling unique builds for each customer isn't ideal. I've got a much more streamlined solution in mind: we can implement a proper license management system that generates unique license codes based on device fingerprinting (way more robust than just MAC addresses). This would let us have a single build that everyone uses, making distribution and updates way simpler.
+For packaging the app, we can definitely set you up with a professional installer for both Windows and Mac. I'm thinking something like Inno Setup for Windows and a proper DMG creator for Mac - that'll give your users a really polished installation experience.
+Quick question though - have you thought about how you want to handle license transfers if users need to move the software to a new machine? We should probably build that capability into the system from the start.
+Let me know if you'd like me to put together a more detailed proposal with timelines and specific features. I'm pretty excited about the potential here - it's right up my alley!
+Looking forward to hearing your thoughts!
+
+=====================================
+[what is Arnold Renderer?]
+Arnold is basically the Ferrari of 3D rendering engines - it's a super advanced software that turns 3D computer graphics into photorealistic images and animations. It was originally developed by Solid Angle (now owned by Autodesk) and is used heavily in major film studios and visual effects houses. If you've watched any big-budget movies in the last decade, you've probably seen Arnold's work without knowing it!
+
+Some key things about Arnold:
+- It's what we call a "ray tracing renderer" - imagine it shooting millions of light rays into a 3D scene to calculate exactly how light would bounce around in real life
+- It's used in major software like Maya, Cinema 4D, and Houdini
+- Each version (5, 6, 7) brings new features for things like better lighting, materials, and rendering speed
+
+The override application you're working on is basically a tool that lets artists customize how Arnold renders their scenes - kind of like having a control panel for all of Arnold's settings. It's super important because these settings can make the difference between a render taking 1 hour or 10 hours, or between looking good versus looking amazing.
+
+When you mentioned needing support for Arnold 6 and 7 features, that probably means adding controls for newer stuff like:
+- Improved GPU rendering options
+- New lighting and material systems
+- Updated sampling and noise reduction settings
+
+=====================================
+He says he will need 20-30 hours to fix the UI scaling and add 2 more Render Override Columns, but that sounds excessive for just updating the project. Take a look at the project and let me know your time estimate? And that'll be the first milestone, I would tell him to halt work
+Mockup of the goal, including all the new Render Options from Arnold 6-7.
+Glad you asked, Blank columns 2 and 3 is fine for now. I was going to have just a few additions to start
+My current goal is to see if you can update the project to have UI Scaling
+since Jose is projecting 20-30 hours for that one task
+
+=====================================
+Next milestone is adding Volume Samples and Volume Depth to the list of render overrides, and adding their functionality via Render Settings (currently just kick override) onto that command override string that's generated and kicked.
+To make room, I recommend the Disable, Misc, Ignore sections to be moved to column 2
+
+Default Volume Samples should be 1, Default Volume Depth should be 0
+
+Does the way this app work and the email from Arnold Support about -set options._____ make sense?
+
+I'm building out an ASS file to test with
+
+This is what I need by December 27th.
+- [ ] set Render Options for Volume Samples and Volume Ray Depth
+- [ ] Successful test of first Render Options
+- [ ] First Licensing Setup test and Windows/Mac Installer test.
+- [ ] Add more render options to Columns 2 and 3.
+- [ ] Create a Copy Button for the Command String.
+- [ ] Improve Command String readability (wrap text?)
+- [ ] Yellow highlight for Console Log Warning lines.
+- [ ] Red highlight for Console Log Error lines.
+
+This feature set is something we will discuss after:
+- [ ] Isolate just Warning and/or just Error lines.
+- [ ] Isolate by specified word in Console Log, such as "texture" with automatic wildcarding behind the scenes, i.e. texture texture and texture.
+- [ ] New Windows/Mac Build with Licensing.
+
+There's a list of Render Options from Arnold 6 and 7, some of which are relevant to everyday rendering.
+And I'd like to add more override radio buttons, titles and override values
+Some will be in existing Panel Sections, like Render Options
+And some entries look like Kick Command alternates/replacements. Like G_diffuse_depth and G_diffuse_samples
+
+I do need an explanation of how licensing will work on a technical and customer level
+
+If you can get licensing solved by Dec 27th, that would be impressive
+
+currently the code looks for a specific MAC Address
+
+Yeah. That's a lot of work. I should work days and nights to get this done. So I'd like you to pay bonus for extra work. What do you think?
+I will complete these steps by Dec 27th.
+
+I can complete first part of the project by Dec 27th.
